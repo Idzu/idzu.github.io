@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>~/Навигация 🏠</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  </head>
+
+  <style>
+    @font-face {
+      font-family: 'Font';
+      src: url('../fonts/JetBrains.ttf');
+    }
+
+    body {
+      color: #ffffff;
+      background: #151515;
+      padding: 1em;
+      font-family: Font;
+    }
+
+    .startpage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      font-weight: 600;
+      color: #c5c5c5;
+      margin-bottom: 2.3em;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      cursor: pointer;
+      background: #2c2c2c;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 6px,
+        rgba(0, 0, 0, 0.12) 0px -3px 5px;
+      margin: 1em;
+      padding: 1.5em;
+      text-align: center;
+      transition: background 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      background: #3c3c3c;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      color: #c5c5c5;
+      font-size: 1.1em;
+      margin: 0;
+    }
+
+    a {
+      color: #c5c5c5;
+      text-decoration: none;
+    }
+  </style>
+
+  <body>
+    <div class="startpage">
+      <h1>~/Навигация 🏠</h1>
+      <h2>Быстрый доступ к страницам</h2>
+      <div class="cards">
+        <div class="card">
+          <a href="spells/">
+            <h3>RandomSpells</h3>
+            <p>Таблица с списком заклинаний</p>
+          </a>
+        </div>
+        <div class="card">
+          <a href="startpage/">
+            <h3>Startpage</h3>
+            <p>Страница для браузера</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
