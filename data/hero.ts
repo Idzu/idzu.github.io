@@ -1,3 +1,4 @@
+import { siteBasePath } from '~/data/site'
 import type { HeroContent } from '~/types/profile'
 
 export const heroContent: HeroContent = {
@@ -10,7 +11,7 @@ export const heroContent: HeroContent = {
     { label: 'Связаться', to: '/contacts', variant: 'secondary' }
   ],
   visual: {
-    src: '/portfolio/hero-visual.svg',
+    src: `${siteBasePath}hero-visual.svg`,
     alt: 'Абстрактная голубая иллюстрация для главного экрана портфолио'
   }
 }

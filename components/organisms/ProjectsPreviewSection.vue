@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { projects } from '~/data/projects'
+import { createStaggeredRevealStyle } from '~/utils/motion'
 
 withDefaults(
   defineProps<{
@@ -22,7 +23,7 @@ withDefaults(
         v-for="(project, index) in projects"
         :key="project.title"
         :project="project"
-        :style="{ '--reveal-delay': `${revealDelay + index * 80}ms` }"
+        :style="createStaggeredRevealStyle(index, revealDelay)"
       />
     </div>
   </BaseSection>

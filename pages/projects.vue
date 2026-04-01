@@ -1,7 +1,6 @@
 <script setup lang="ts">
-useSeoMeta({
+usePageSeo({
   title: 'Projects',
-  ogTitle: 'Projects · Frontend Portfolio',
   description: 'Кейсы frontend разработчика: CRM, система рассылок и админка с фильтрацией данных.'
 })
 </script>

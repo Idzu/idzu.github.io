@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { contactLinks } from '~/data/contacts'
+import { createStaggeredRevealStyle } from '~/utils/motion'
 </script>
 
 <template>
@@ -13,7 +14,7 @@ import { contactLinks } from '~/data/contacts'
         v-for="(contact, index) in contactLinks"
         :key="contact.href"
         :contact="contact"
-        :style="{ '--reveal-delay': `${120 + index * 70}ms` }"
+        :style="createStaggeredRevealStyle(index, 120, 70)"
       />
     </div>
   </BaseSection>

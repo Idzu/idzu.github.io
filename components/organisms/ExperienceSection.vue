@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { experienceContent } from '~/data/experience'
+import { createStaggeredRevealStyle } from '~/utils/motion'
 </script>
 
 <template>
@@ -17,7 +18,7 @@ import { experienceContent } from '~/data/experience'
           v-for="(group, index) in experienceContent.groups"
           :key="group.title"
           :group="group"
-          :style="{ '--reveal-delay': `${120 + index * 70}ms` }"
+          :style="createStaggeredRevealStyle(index, 120, 70)"
         />
       </div>
     </BaseCard>

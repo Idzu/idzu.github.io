@@ -1,9 +1,10 @@
 <script setup lang="ts">
-useSeoMeta({
+import { siteName } from '~/data/site'
+
+usePageSeo({
   title: 'Home',
-  ogTitle: 'Frontend Developer Portfolio',
-  description: 'Nuxt 3 frontend портфолио: стек, проекты, подход к разработке и оптимизации.',
-  ogDescription: 'Nuxt 3 frontend портфолио: стек, проекты, подход к разработке и оптимизации.'
+  ogTitle: siteName,
+  description: 'Nuxt 3 frontend портфолио: стек, проекты, подход к разработке и оптимизации.'
 })
 </script>
 

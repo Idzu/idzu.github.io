@@ -49,7 +49,10 @@
   - `organisms/` — крупные секции и layout-блоки
   - `ProjectCard.vue` — карточка проекта
 - `data/` — статичный контент по доменам: hero, navigation, stack, projects, contacts, experience, theme
+- `data/site.ts` — общие site/meta-константы для base path, title и SEO
 - `composables/useReveal.ts` — progressive-enhancement reveal-анимации без блокировки SSR-контента
+- `composables/usePageSeo.ts` — единый helper для page-level SEO
+- `utils/motion.ts` — утилиты для reveal/stagger анимаций
 - `assets/scss/main.scss` — дизайн-токены и глобальные стили
 - `.github/workflows/deploy.yml` — CI/CD деплой на GitHub Pages
 
@@ -69,10 +72,10 @@
 Перед публикацией обязательно заменить:
 
 - `Placeholder Name`
-- Telegram/GitHub ссылки в `pages/contacts.vue`
+- Telegram/GitHub ссылки в `data/contacts.ts`
 - при необходимости — тексты проектов в `data/projects.ts`
 - hero-контент в `data/hero.ts`
-- `og:url` в `nuxt.config.ts` на реальный `https://<username>.github.io/portfolio/`
+- site/meta константы в `data/site.ts`
 
 ## Локальный запуск
 

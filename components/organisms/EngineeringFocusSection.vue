@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { engineeringFocus } from '~/data/home'
+import { createStaggeredRevealStyle } from '~/utils/motion'
 </script>
 
 <template>
@@ -15,7 +16,7 @@ import { engineeringFocus } from '~/data/home'
         :key="item.title"
         :title="item.title"
         :description="item.description"
-        :style="{ '--reveal-delay': `${160 + index * 80}ms` }"
+        :style="createStaggeredRevealStyle(index, 160)"
       />
     </div>
   </BaseSection>

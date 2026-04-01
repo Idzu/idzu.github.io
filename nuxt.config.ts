@@ -1,3 +1,5 @@
+import { siteBasePath, siteDescription, siteName, siteOgDescription, siteUrl } from './data/site'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   devtools: { enabled: false },
@@ -9,27 +11,19 @@ export default defineNuxtConfig({
     }
   ],
   app: {
-    baseURL: '/portfolio/',
+    baseURL: siteBasePath,
     head: {
       htmlAttrs: { lang: 'ru' },
-      titleTemplate: '%s · Frontend Developer Portfolio',
+      titleTemplate: `%s · ${siteName}`,
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          name: 'description',
-          content:
-            'Портфолио Frontend Developer (Nuxt 3 / Vue 3 / TypeScript): проекты, опыт, подход к архитектуре и производительности.'
-        },
+        { name: 'description', content: siteDescription },
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'Frontend Developer Portfolio' },
-        {
-          property: 'og:description',
-          content:
-            'Разрабатываю сложные интерфейсы и SaaS-системы. Фокус на производительности, масштабируемости и чистой архитектуре.'
-        },
-        { property: 'og:url', content: 'https://username.github.io/portfolio/' }
+        { property: 'og:title', content: siteName },
+        { property: 'og:description', content: siteOgDescription },
+        { property: 'og:url', content: siteUrl }
       ],
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/portfolio/favicon.svg' }]
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: `${siteBasePath}favicon.svg` }]
     }
   },
   nitro: {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { navigationLinks } from '~/data/navigation'
+import { siteShortName } from '~/data/site'
 
 const isMenuOpen = ref(false)
 const route = useRoute()
@@ -31,7 +32,7 @@ onBeforeUnmount(() => {
 <template>
   <header class="app-header">
     <BaseContainer class="app-header__inner">
-      <NuxtLink class="app-header__logo" to="/">Portfolio</NuxtLink>
+      <NuxtLink class="app-header__logo" to="/">{{ siteShortName }}</NuxtLink>
 
       <div class="app-header__desktop">
         <AppNav :items="navigationLinks" />

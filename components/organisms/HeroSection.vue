@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { heroContent } from '~/data/hero'
+import { createRevealStyle } from '~/utils/motion'
 </script>
 
 <template>
-  <section class="hero" data-reveal style="--reveal-delay: 0ms">
+  <section class="hero" data-reveal :style="createRevealStyle(0)">
     <BaseContainer>
       <div class="hero__inner">
         <div class="hero__content">
