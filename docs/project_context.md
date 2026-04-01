@@ -49,7 +49,9 @@
   - `organisms/` — крупные секции и layout-блоки
   - `ProjectCard.vue` — карточка проекта
 - `data/` — статичный контент по доменам: hero, navigation, stack, projects, contacts, experience, theme
+- `data/pages.ts` — page-level SEO и тексты секций, которые страницы прокидывают в organisms
 - `data/site.ts` — общие site/meta-константы для base path, title и SEO
+- `composables/useMenuState.ts` — локальная логика mobile menu и body scroll lock для header
 - `composables/useReveal.ts` — progressive-enhancement reveal-анимации без блокировки SSR-контента
 - `composables/usePageSeo.ts` — единый helper для page-level SEO
 - `utils/motion.ts` — утилиты для reveal/stagger анимаций

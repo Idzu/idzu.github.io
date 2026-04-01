@@ -1,4 +1,6 @@
-export const engineeringFocus = [
+import type { MetricItem } from '~/types/profile'
+
+export const engineeringFocus: MetricItem[] = [
   {
     title: 'Качество кода',
     description: 'Читаемый код, разделение ответственности, переиспользуемые компоненты и строгая типизация.'

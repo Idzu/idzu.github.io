@@ -2,31 +2,7 @@
 import { navigationLinks } from '~/data/navigation'
 import { siteShortName } from '~/data/site'
 
-const isMenuOpen = ref(false)
-const route = useRoute()
-
-const closeMenu = () => {
-  isMenuOpen.value = false
-}
-
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
-}
-
-watch(
-  () => route.fullPath,
-  () => {
-    closeMenu()
-  }
-)
-
-watch(isMenuOpen, (value) => {
-  document.body.classList.toggle('menu-open', value)
-})
-
-onBeforeUnmount(() => {
-  document.body.classList.remove('menu-open')
-})
+const { close, isOpen, toggle } = useMenuState()
 </script>
 
 <template>
@@ -39,14 +15,14 @@ onBeforeUnmount(() => {
       </div>
 
       <div class="app-header__mobile">
-        <BaseBurgerButton :is-open="isMenuOpen" @click="toggleMenu" />
+        <BaseBurgerButton :is-open="isOpen" @click="toggle" />
       </div>
     </BaseContainer>
 
     <Transition name="mobile-menu">
-      <div v-if="isMenuOpen" class="app-header__mobile-panel">
+      <div v-if="isOpen" class="app-header__mobile-panel">
         <BaseContainer>
-          <AppNav :items="navigationLinks" direction="column" @navigate="closeMenu" />
+          <AppNav :items="navigationLinks" direction="column" @navigate="close" />
         </BaseContainer>
       </div>
     </Transition>

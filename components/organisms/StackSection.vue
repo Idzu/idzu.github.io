@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { stack } from '~/data/stack'
+defineProps<{
+  items: string[]
+  title: string
+  subtitle?: string
+  revealDelay?: number
+}>()
 </script>
 
 <template>
-  <BaseSection title="Stack" subtitle="Технологии, с которыми регулярно работаю." density="compact" :reveal-delay="80">
+  <BaseSection :title="title" :subtitle="subtitle" density="compact" :reveal-delay="revealDelay ?? 80">
     <div class="stack-grid">
-      <BaseChip v-for="item in stack" :key="item" :label="item" />
+      <BaseChip v-for="item in items" :key="item" :label="item" />
     </div>
   </BaseSection>
 </template>

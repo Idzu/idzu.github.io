@@ -1,14 +1,15 @@
 <script setup lang="ts">
-usePageSeo({
-  title: 'Projects',
-  description: 'Кейсы frontend разработчика: CRM, система рассылок и админка с фильтрацией данных.'
-})
+import { projectsPageContent } from '~/data/pages'
+import { projects } from '~/data/projects'
+
+usePageSeo(projectsPageContent.seo)
 </script>
 
 <template>
   <ProjectsPreviewSection
-    title="Projects"
-    subtitle="Список production-кейсов: задачи, стек и измеримые результаты для бизнеса."
+    :projects="projects"
+    :title="projectsPageContent.section.title"
+    :subtitle="projectsPageContent.section.subtitle"
     :reveal-delay="80"
   />
 </template>

@@ -1,10 +1,14 @@
 <script setup lang="ts">
-usePageSeo({
-  title: 'Contacts',
-  description: 'Контакты frontend разработчика: Telegram и GitHub.'
-})
+import { contactLinks } from '~/data/contacts'
+import { contactsPageContent } from '~/data/pages'
+
+usePageSeo(contactsPageContent.seo)
 </script>
 
 <template>
-  <ContactsSection />
+  <ContactsSection
+    :contacts="contactLinks"
+    :title="contactsPageContent.section.title"
+    :subtitle="contactsPageContent.section.subtitle"
+  />
 </template>

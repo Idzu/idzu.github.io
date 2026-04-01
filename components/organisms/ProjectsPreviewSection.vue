@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { projects } from '~/data/projects'
 import { createStaggeredRevealStyle } from '~/utils/motion'
+import type { Project } from '~/types/profile'
 
 withDefaults(
   defineProps<{
+    projects: Project[]
     title?: string
     subtitle?: string
     revealDelay?: number

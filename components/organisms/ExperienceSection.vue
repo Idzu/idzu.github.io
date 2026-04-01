@@ -1,24 +1,34 @@
 <script setup lang="ts">
-import { experienceContent } from '~/data/experience'
 import { createStaggeredRevealStyle } from '~/utils/motion'
+import type { ExperienceContent } from '~/types/profile'
+
+withDefaults(
+  defineProps<{
+    content: ExperienceContent
+    title?: string
+    subtitle?: string
+    revealDelay?: number
+  }>(),
+  {
+    title: 'Experience',
+    subtitle: 'Коммерческая разработка SPA/SSR интерфейсов и интеграций с backend.',
+    revealDelay: 80
+  }
+)
 </script>
 
 <template>
-  <BaseSection
-    title="Experience"
-    subtitle="Коммерческая разработка SPA/SSR интерфейсов и интеграций с backend."
-    :reveal-delay="80"
-  >
+  <BaseSection :title="title" :subtitle="subtitle" :reveal-delay="revealDelay">
     <BaseCard class="experience-card" elevated>
-      <h3 class="experience-card__role">{{ experienceContent.role }}</h3>
-      <p class="experience-card__description">{{ experienceContent.description }}</p>
+      <h3 class="experience-card__role">{{ content.role }}</h3>
+      <p class="experience-card__description">{{ content.description }}</p>
 
       <div class="experience-card__groups">
         <ExperienceGroup
-          v-for="(group, index) in experienceContent.groups"
+          v-for="(group, index) in content.groups"
           :key="group.title"
           :group="group"
-          :style="createStaggeredRevealStyle(index, 120, 70)"
+          :style="createStaggeredRevealStyle(index, revealDelay + 40, 70)"
         />
       </div>
     </BaseCard>

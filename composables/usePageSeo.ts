@@ -1,12 +1,7 @@
 import { siteName } from '~/data/site'
+import type { PageSeoContent } from '~/types/profile'
 
-interface PageSeoOptions {
-  title: string
-  description: string
-  ogTitle?: string
-}
-
-export const usePageSeo = ({ title, description, ogTitle }: PageSeoOptions) => {
+export const usePageSeo = ({ title, description, ogTitle }: PageSeoContent) => {
   useSeoMeta({
     title,
     ogTitle: ogTitle ?? `${title} · ${siteName}`,

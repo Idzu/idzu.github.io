@@ -1,18 +1,26 @@
 <script setup lang="ts">
-import { siteName } from '~/data/site'
+import { heroContent } from '~/data/hero'
+import { engineeringFocus } from '~/data/home'
+import { homePageContent } from '~/data/pages'
+import { projects } from '~/data/projects'
+import { stack } from '~/data/stack'
 
-usePageSeo({
-  title: 'Home',
-  ogTitle: siteName,
-  description: 'Nuxt 3 frontend портфолио: стек, проекты, подход к разработке и оптимизации.'
-})
+usePageSeo(homePageContent.seo)
 </script>
 
 <template>
   <div>
-    <HeroSection />
-    <StackSection />
-    <ProjectsPreviewSection />
-    <EngineeringFocusSection />
+    <HeroSection :content="heroContent" />
+    <StackSection :items="stack" :title="homePageContent.stack.title" :subtitle="homePageContent.stack.subtitle" />
+    <ProjectsPreviewSection
+      :projects="projects"
+      :title="homePageContent.projects.title"
+      :subtitle="homePageContent.projects.subtitle"
+    />
+    <EngineeringFocusSection
+      :items="engineeringFocus"
+      :title="homePageContent.engineeringFocus.title"
+      :subtitle="homePageContent.engineeringFocus.subtitle"
+    />
   </div>
 </template>

@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { heroContent } from '~/data/hero'
 import { createRevealStyle } from '~/utils/motion'
+import type { HeroContent } from '~/types/profile'
+
+defineProps<{
+  content: HeroContent
+}>()
 </script>
 
 <template>
@@ -8,14 +12,14 @@ import { createRevealStyle } from '~/utils/motion'
     <BaseContainer>
       <div class="hero__inner">
         <div class="hero__content">
-          <p class="hero__eyebrow">{{ heroContent.eyebrow }}</p>
-          <h1 class="hero__title">{{ heroContent.title }}</h1>
-          <p class="hero__description">{{ heroContent.description }}</p>
-          <HeroActions :actions="heroContent.actions" />
+          <p class="hero__eyebrow">{{ content.eyebrow }}</p>
+          <h1 class="hero__title">{{ content.title }}</h1>
+          <p class="hero__description">{{ content.description }}</p>
+          <HeroActions :actions="content.actions" />
         </div>
 
         <div class="hero__visual-wrap">
-          <img class="hero__visual" :src="heroContent.visual.src" :alt="heroContent.visual.alt" />
+          <img class="hero__visual" :src="content.visual.src" :alt="content.visual.alt" />
         </div>
       </div>
     </BaseContainer>

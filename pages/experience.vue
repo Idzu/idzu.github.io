@@ -1,10 +1,14 @@
 <script setup lang="ts">
-usePageSeo({
-  title: 'Experience',
-  description: 'Опыт frontend разработки: архитектура, SSR/SSG оптимизация, API интеграции и UX.'
-})
+import { experienceContent } from '~/data/experience'
+import { experiencePageContent } from '~/data/pages'
+
+usePageSeo(experiencePageContent.seo)
 </script>
 
 <template>
-  <ExperienceSection />
+  <ExperienceSection
+    :content="experienceContent"
+    :title="experiencePageContent.section.title"
+    :subtitle="experiencePageContent.section.subtitle"
+  />
 </template>

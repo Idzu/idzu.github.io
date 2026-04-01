@@ -45,6 +45,22 @@ export interface ExperienceContent {
   groups: ExperienceGroup[]
 }
 
+export interface MetricItem {
+  title: string
+  description: string
+}
+
+export interface SectionContent {
+  title: string
+  subtitle?: string
+}
+
+export interface PageSeoContent {
+  title: string
+  description: string
+  ogTitle?: string
+}
+
 export interface ThemePalette {
   background: [string, string, string]
   primary: string
