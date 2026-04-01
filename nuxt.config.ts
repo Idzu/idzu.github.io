@@ -2,6 +2,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-01',
   devtools: { enabled: false },
   css: ['~/assets/scss/main.scss'],
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false
+    }
+  ],
   app: {
     baseURL: '/portfolio/',
     head: {

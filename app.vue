@@ -1,3 +1,7 @@
+<script setup lang="ts">
+useReveal()
+</script>
+
 <template>
   <div class="app-shell">
     <AppHeader />
@@ -7,7 +11,3 @@
     <AppFooter />
   </div>
 </template>
-
-<script setup lang="ts">
-useReveal()
-</script>

@@ -1,6 +1,6 @@
-export const stack = ['Nuxt 3', 'Vue 3 (Composition API)', 'TypeScript', 'GraphQL (Apollo)', 'Docker', 'Redis']
+import type { Project } from '~/types/profile'
 
-export const projects = [
+export const projects: Project[] = [
   {
     title: 'CRM для психологов',
     description: 'Nuxt 3 интерфейсы для записи клиентов и управления рабочими сценариями.',

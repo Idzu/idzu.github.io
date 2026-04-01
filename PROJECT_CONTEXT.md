@@ -37,28 +37,30 @@
 ## Структура
 
 - `app.vue` — общий layout (header / footer / page)
+- `types/profile.ts` — общие типы для контента и UI-данных
 - `pages/`
-  - `index.vue` — hero, stack, preview projects, engineering focus
-  - `projects.vue` — список кейсов
-  - `experience.vue` — опыт и компетенции
-  - `contacts.vue` — контакты
+  - `index.vue` — сборка главной из organisms
+  - `projects.vue` — страница проектов
+  - `experience.vue` — страница опыта
+  - `contacts.vue` — страница контактов
 - `components/`
-  - `AppHeader.vue`
-  - `AppFooter.vue`
-  - `SectionBlock.vue`
-  - `ProjectCard.vue`
-- `data/profile.ts` — контент стека и проектов
-- `composables/useReveal.ts` — reveal-анимации (IntersectionObserver)
+  - `atoms/` — базовые UI-примитивы
+  - `molecules/` — композиции примитивов
+  - `organisms/` — крупные секции и layout-блоки
+  - `ProjectCard.vue` — карточка проекта
+- `data/` — статичный контент по доменам: hero, navigation, stack, projects, contacts, experience, theme
+- `composables/useReveal.ts` — progressive-enhancement reveal-анимации без блокировки SSR-контента
 - `assets/scss/main.scss` — дизайн-токены и глобальные стили
 - `.github/workflows/deploy.yml` — CI/CD деплой на GitHub Pages
 
 ## Motion и UX
 
-Анимации deliberately subtle:
+Анимации deliberately subtle, но теперь чуть выразительнее:
 
-- Hero и секции: fade + translateY reveal
-- ProjectCard: лёгкий scale + мягкая тень на hover
-- Кнопки: лёгкий translate/opacity hover
+- Hero и секции: reveal через progressive enhancement, без скрытия SSR-контента
+- Hero visual: мягкий float/pulse
+- ProjectCard и CTA: лёгкий lift + glow hover
+- Header: burger menu с анимацией открытия/закрытия
 
 Без тяжёлых 3D/canvas/WebGL эффектов.
 
@@ -68,7 +70,8 @@
 
 - `Placeholder Name`
 - Telegram/GitHub ссылки в `pages/contacts.vue`
-- при необходимости — тексты проектов в `data/profile.ts`
+- при необходимости — тексты проектов в `data/projects.ts`
+- hero-контент в `data/hero.ts`
 - `og:url` в `nuxt.config.ts` на реальный `https://<username>.github.io/portfolio/`
 
 ## Локальный запуск
