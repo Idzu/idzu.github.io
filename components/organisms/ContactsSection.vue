@@ -5,12 +5,14 @@ import type { ContactLink } from '~/types/profile'
 withDefaults(
   defineProps<{
     contacts: ContactLink[]
+    eyebrow?: string
     title?: string
     subtitle?: string
     revealDelay?: number
   }>(),
   {
-    title: 'Contacts',
+    eyebrow: undefined,
+    title: 'Контакты',
     subtitle: 'Открыт к продуктовым и SaaS задачам, где важны архитектура и скорость интерфейса.',
     revealDelay: 80
   }
@@ -18,7 +20,7 @@ withDefaults(
 </script>
 
 <template>
-  <BaseSection :title="title" :subtitle="subtitle" :reveal-delay="revealDelay">
+  <BaseSection :eyebrow="eyebrow" :title="title" :subtitle="subtitle" :reveal-delay="revealDelay">
     <div class="grid contacts-grid">
       <ContactCard
         v-for="(contact, index) in contacts"

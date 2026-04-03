@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { HeroAction } from '~/types/profile'
+import type { ActionLink } from '~/types/profile'
 
 defineProps<{
-  actions: HeroAction[]
+  actions: ActionLink[]
 }>()
 </script>
 
@@ -10,8 +10,9 @@ defineProps<{
   <div class="hero-actions">
     <BaseButton
       v-for="action in actions"
-      :key="action.to"
+      :key="action.to ?? action.href ?? action.label"
       :to="action.to"
+      :href="action.href"
       :variant="action.variant === 'primary' ? 'primary' : 'secondary'"
     >
       {{ action.label }}

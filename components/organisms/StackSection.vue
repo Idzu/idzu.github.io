@@ -1,5 +1,6 @@
 <script setup lang="ts">
 defineProps<{
+  eyebrow?: string
   items: string[]
   title: string
   subtitle?: string
@@ -8,7 +9,13 @@ defineProps<{
 </script>
 
 <template>
-  <BaseSection :title="title" :subtitle="subtitle" density="compact" :reveal-delay="revealDelay ?? 80">
+  <BaseSection
+    :eyebrow="eyebrow"
+    :title="title"
+    :subtitle="subtitle"
+    density="compact"
+    :reveal-delay="revealDelay ?? 80"
+  >
     <div class="stack-grid">
       <BaseChip v-for="item in items" :key="item" :label="item" />
     </div>

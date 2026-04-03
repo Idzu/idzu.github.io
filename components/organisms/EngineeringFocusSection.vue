@@ -5,12 +5,14 @@ import type { MetricItem } from '~/types/profile'
 withDefaults(
   defineProps<{
     items: MetricItem[]
+    eyebrow?: string
     title?: string
     subtitle?: string
     revealDelay?: number
   }>(),
   {
-    title: 'Engineering Focus',
+    eyebrow: undefined,
+    title: 'Принципы',
     subtitle: 'Системный подход к качеству кода и UX.',
     revealDelay: 160
   }
@@ -18,11 +20,12 @@ withDefaults(
 </script>
 
 <template>
-  <BaseSection :title="title" :subtitle="subtitle" density="compact" :reveal-delay="revealDelay">
+  <BaseSection :eyebrow="eyebrow" :title="title" :subtitle="subtitle" density="compact" :reveal-delay="revealDelay">
     <div class="grid metrics-grid">
       <MetricCard
         v-for="(item, index) in items"
         :key="item.title"
+        :index="index + 1"
         :title="item.title"
         :description="item.description"
         :style="createStaggeredRevealStyle(index, revealDelay)"

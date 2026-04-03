@@ -1,26 +1,36 @@
 <script setup lang="ts">
 import { heroContent } from '~/data/hero'
-import { engineeringFocus } from '~/data/home'
-import { homePageContent } from '~/data/pages'
-import { projects } from '~/data/projects'
-import { stack } from '~/data/stack'
+import {
+  engineeringPrinciples,
+  engineeringPrinciplesSection,
+  featuredProjectsAction,
+  featuredProjectsSection,
+  homeFinalCta,
+  homeSeo,
+  nowSectionContent
+} from '~/data/home'
+import { featuredProjects } from '~/data/projects'
 
-usePageSeo(homePageContent.seo)
+usePageSeo(homeSeo)
 </script>
 
 <template>
   <div>
     <HeroSection :content="heroContent" />
-    <StackSection :items="stack" :title="homePageContent.stack.title" :subtitle="homePageContent.stack.subtitle" />
+    <NowSection :content="nowSectionContent" />
     <ProjectsPreviewSection
-      :projects="projects"
-      :title="homePageContent.projects.title"
-      :subtitle="homePageContent.projects.subtitle"
+      :projects="featuredProjects"
+      :eyebrow="featuredProjectsSection.eyebrow"
+      :title="featuredProjectsSection.title"
+      :subtitle="featuredProjectsSection.subtitle"
+      :action="featuredProjectsAction"
     />
     <EngineeringFocusSection
-      :items="engineeringFocus"
-      :title="homePageContent.engineeringFocus.title"
-      :subtitle="homePageContent.engineeringFocus.subtitle"
+      :items="engineeringPrinciples"
+      :eyebrow="engineeringPrinciplesSection.eyebrow"
+      :title="engineeringPrinciplesSection.title"
+      :subtitle="engineeringPrinciplesSection.subtitle"
     />
+    <FinalCtaSection :content="homeFinalCta" />
   </div>
 </template>

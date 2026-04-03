@@ -1,67 +1,47 @@
-import { siteName } from '~/data/site'
 import type { PageSeoContent, SectionContent } from '~/types/profile'
-
-interface HomePageContent {
-  seo: PageSeoContent
-  stack: SectionContent
-  projects: SectionContent
-  engineeringFocus: SectionContent
-}
 
 interface ContentPage {
   seo: PageSeoContent
   section: SectionContent
 }
 
-export const homePageContent: HomePageContent = {
-  seo: {
-    title: 'Home',
-    ogTitle: siteName,
-    description: 'Nuxt 3 frontend портфолио: стек, проекты, подход к разработке и оптимизации.'
-  },
-  stack: {
-    title: 'Stack',
-    subtitle: 'Технологии, с которыми регулярно работаю.'
-  },
-  projects: {
-    title: 'Preview Projects',
-    subtitle: 'Три ключевых кейса с фокусом на бизнес-результат.'
-  },
-  engineeringFocus: {
-    title: 'Engineering Focus',
-    subtitle: 'Системный подход к качеству кода и UX.'
-  }
-}
-
 export const projectsPageContent: ContentPage = {
   seo: {
-    title: 'Projects',
-    description: 'Кейсы frontend разработчика: CRM, система рассылок и админка с фильтрацией данных.'
+    title: 'Проекты',
+    description: 'Кейсы про продуктовые интерфейсы, внутренние системы, data-heavy экраны и AI-aware web подход.'
   },
   section: {
-    title: 'Projects',
-    subtitle: 'Список production-кейсов: задачи, стек и измеримые результаты для бизнеса.'
+    eyebrow: 'Кейсы',
+    title: 'Избранные кейсы и product-системы',
+    subtitle: 'Подборка задач, где важны были не только экраны, но и структура сценариев, масштабируемость интерфейса и спокойная delivery-модель.'
   }
 }
 
-export const experiencePageContent: ContentPage = {
+export const experiencePageContent: ContentPage & { stackSection: SectionContent } = {
   seo: {
-    title: 'Experience',
-    description: 'Опыт frontend разработки: архитектура, SSR/SSG оптимизация, API интеграции и UX.'
+    title: 'Опыт',
+    description: 'Опыт работы с интерфейсными системами, архитектурой frontend-приложений и delivery для сложных продуктовых сценариев.'
   },
   section: {
-    title: 'Experience',
-    subtitle: 'Коммерческая разработка SPA/SSR интерфейсов и интеграций с backend.'
+    eyebrow: 'Опыт',
+    title: 'Как я работаю внутри продукта',
+    subtitle: 'Не просто собираю экраны, а выстраиваю интерфейсные системы, которые остаются понятными и устойчивыми при росте требований.'
+  },
+  stackSection: {
+    eyebrow: 'Стек',
+    title: 'Технологическая среда',
+    subtitle: 'Инструменты и подходы, которыми обычно собираю interface-heavy продукты и внутренние системы.'
   }
 }
 
 export const contactsPageContent: ContentPage = {
   seo: {
-    title: 'Contacts',
-    description: 'Контакты frontend разработчика: Telegram и GitHub.'
+    title: 'Контакты',
+    description: 'Контакты для product work, frontend architecture и сложных интерфейсных задач.'
   },
   section: {
-    title: 'Contacts',
-    subtitle: 'Открыт к продуктовым и SaaS задачам, где важны архитектура и скорость интерфейса.'
+    eyebrow: 'Контакты',
+    title: 'Открыт к сильным продуктовым задачам',
+    subtitle: 'Лучше всего там, где нужно соединить UX, архитектуру и спокойный инженерный темп без шаблонного портфельного шума.'
   }
 }

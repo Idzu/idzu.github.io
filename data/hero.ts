@@ -1,17 +1,37 @@
-import { siteBasePath } from '~/data/site'
 import type { HeroContent } from '~/types/profile'
 
 export const heroContent: HeroContent = {
-  eyebrow: 'Frontend Developer (Nuxt 3 / Vue 3 / TypeScript)',
-  title: 'Placeholder Name',
+  eyebrow: 'Lorem ipsum',
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   description:
-    'Разрабатываю сложные интерфейсы и SaaS-системы. Фокус на производительности, масштабируемости и чистой архитектуре.',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   actions: [
-    { label: 'Смотреть проекты', to: '/projects', variant: 'primary' },
-    { label: 'Связаться', to: '/contacts', variant: 'secondary' }
+    { label: 'Избранные кейсы', to: '/projects', variant: 'primary' },
+    { label: 'Обсудить задачу', to: '/contacts', variant: 'secondary' }
+  ],
+  meta: [
+    { label: 'Lorem', value: 'Lorem ipsum dolor sit amet' },
+    { label: 'Ipsum', value: 'Consectetur adipiscing elit' },
+    { label: 'Dolor', value: 'Sed do eiusmod tempor' }
   ],
   visual: {
-    src: `${siteBasePath}hero-visual.svg`,
-    alt: 'Абстрактная голубая иллюстрация для главного экрана портфолио'
+    eyebrow: 'Visual',
+    panels: [
+      {
+        eyebrow: '01',
+        title: 'Lorem ipsum',
+        items: ['Lorem ipsum', 'Dolor sit amet', 'Consectetur']
+      },
+      {
+        eyebrow: '02',
+        title: 'Dolor sit amet',
+        items: ['Adipiscing elit', 'Sed do eiusmod', 'Tempor incididunt']
+      },
+      {
+        eyebrow: '03',
+        title: 'Consectetur elit',
+        items: ['Ut labore', 'Dolore magna', 'Aliqua enim']
+      }
+    ]
   }
 }

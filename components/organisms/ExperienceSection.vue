@@ -5,12 +5,14 @@ import type { ExperienceContent } from '~/types/profile'
 withDefaults(
   defineProps<{
     content: ExperienceContent
+    eyebrow?: string
     title?: string
     subtitle?: string
     revealDelay?: number
   }>(),
   {
-    title: 'Experience',
+    eyebrow: undefined,
+    title: 'Опыт',
     subtitle: 'Коммерческая разработка SPA/SSR интерфейсов и интеграций с backend.',
     revealDelay: 80
   }
@@ -18,7 +20,7 @@ withDefaults(
 </script>
 
 <template>
-  <BaseSection :title="title" :subtitle="subtitle" :reveal-delay="revealDelay">
+  <BaseSection :eyebrow="eyebrow" :title="title" :subtitle="subtitle" :reveal-delay="revealDelay">
     <BaseCard class="experience-card" elevated>
       <h3 class="experience-card__role">{{ content.role }}</h3>
       <p class="experience-card__description">{{ content.description }}</p>

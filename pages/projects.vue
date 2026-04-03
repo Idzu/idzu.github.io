@@ -8,6 +8,7 @@ usePageSeo(projectsPageContent.seo)
 <template>
   <ProjectsPreviewSection
     :projects="projects"
+    :eyebrow="projectsPageContent.section.eyebrow"
     :title="projectsPageContent.section.title"
     :subtitle="projectsPageContent.section.subtitle"
     :reveal-delay="80"

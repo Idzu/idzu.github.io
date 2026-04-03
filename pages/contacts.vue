@@ -8,6 +8,7 @@ usePageSeo(contactsPageContent.seo)
 <template>
   <ContactsSection
     :contacts="contactLinks"
+    :eyebrow="contactsPageContent.section.eyebrow"
     :title="contactsPageContent.section.title"
     :subtitle="contactsPageContent.section.subtitle"
   />

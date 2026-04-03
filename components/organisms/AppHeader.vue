@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { navigationLinks } from '~/data/navigation'
-import { siteShortName } from '~/data/site'
+import { siteRole, siteShortName } from '~/data/site'
 
 const { close, isOpen, toggle } = useMenuState()
 </script>
@@ -8,7 +8,10 @@ const { close, isOpen, toggle } = useMenuState()
 <template>
   <header class="app-header">
     <BaseContainer class="app-header__inner">
-      <NuxtLink class="app-header__logo" to="/">{{ siteShortName }}</NuxtLink>
+      <NuxtLink class="app-header__brand" to="/">
+        <span class="app-header__role">{{ siteRole }}</span>
+        <span class="app-header__logo">{{ siteShortName }}</span>
+      </NuxtLink>
 
       <div class="app-header__desktop">
         <AppNav :items="navigationLinks" />

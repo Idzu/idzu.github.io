@@ -1,12 +1,14 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
+    eyebrow?: string
     title: string
     subtitle?: string
     density?: 'default' | 'compact'
     revealDelay?: number
   }>(),
   {
+    eyebrow: undefined,
     subtitle: undefined,
     density: 'default',
     revealDelay: 0
@@ -23,6 +25,7 @@ withDefaults(
   >
     <BaseContainer>
       <header class="section__header">
+        <p v-if="eyebrow" class="section__eyebrow">{{ eyebrow }}</p>
         <h2 class="section__title">{{ title }}</h2>
         <p v-if="subtitle" class="section__subtitle">{{ subtitle }}</p>
       </header>

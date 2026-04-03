@@ -3,35 +3,57 @@ export interface NavItem {
   to: string
 }
 
-export interface HeroAction {
+export interface ActionLink {
   label: string
-  to: string
+  to?: string
+  href?: string
   variant?: 'primary' | 'secondary'
+}
+
+export interface HeroMetaItem {
+  label: string
+  value: string
+}
+
+export interface HeroVisualPanel {
+  eyebrow: string
+  title: string
+  items: string[]
 }
 
 export interface HeroContent {
   eyebrow: string
   title: string
   description: string
-  actions: HeroAction[]
+  actions: ActionLink[]
+  meta: HeroMetaItem[]
   visual: {
-    src: string
-    alt: string
+    eyebrow: string
+    panels: HeroVisualPanel[]
   }
+}
+
+export interface ProjectLink {
+  label: string
+  href: string
 }
 
 export interface Project {
   title: string
-  description: string
-  tasks: string[]
+  category: string
+  concept: string
+  responsibilities: string[]
   stack: string[]
-  result: string
+  impact: string
+  link?: ProjectLink
+  featured?: boolean
 }
 
 export interface ContactLink {
   label: string
   value: string
   href: string
+  note?: string
 }
 
 export interface ExperienceGroup {
@@ -51,6 +73,7 @@ export interface MetricItem {
 }
 
 export interface SectionContent {
+  eyebrow?: string
   title: string
   subtitle?: string
 }
@@ -59,6 +82,28 @@ export interface PageSeoContent {
   title: string
   description: string
   ogTitle?: string
+}
+
+export interface NowItem {
+  label: string
+  title: string
+  description: string
+}
+
+export interface NowSectionContent {
+  eyebrow: string
+  title: string
+  description: string
+  note: string
+  items: NowItem[]
+}
+
+export interface FinalCtaContent {
+  eyebrow: string
+  title: string
+  description: string
+  actions: ActionLink[]
+  topics: string[]
 }
 
 export interface ThemePalette {

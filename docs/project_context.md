@@ -39,17 +39,17 @@
 - `app.vue` — общий layout (header / footer / page)
 - `types/profile.ts` — общие типы для контента и UI-данных
 - `pages/`
-  - `index.vue` — сборка главной из organisms
+  - `index.vue` — hero, now, selected work, principles и финальный CTA
   - `projects.vue` — страница проектов
   - `experience.vue` — страница опыта
   - `contacts.vue` — страница контактов
 - `components/`
   - `atoms/` — базовые UI-примитивы
   - `molecules/` — композиции примитивов
-  - `organisms/` — крупные секции и layout-блоки
+  - `organisms/` — крупные секции и layout-блоки, включая `NowSection` и `FinalCtaSection`
   - `ProjectCard.vue` — карточка проекта
-- `data/` — статичный контент по доменам: hero, navigation, stack, projects, contacts, experience, theme
-- `data/pages.ts` — page-level SEO и тексты секций, которые страницы прокидывают в organisms
+- `data/` — статичный контент по доменам: hero, home, navigation, stack, projects, contacts, experience, theme
+- `data/pages.ts` — page-level SEO и секционные тексты для внутренних страниц
 - `data/site.ts` — общие site/meta-константы для base path, title и SEO
 - `composables/useMenuState.ts` — локальная логика mobile menu и body scroll lock для header
 - `composables/useReveal.ts` — progressive-enhancement reveal-анимации без блокировки SSR-контента

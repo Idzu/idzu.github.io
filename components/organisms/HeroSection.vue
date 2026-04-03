@@ -16,11 +16,16 @@ defineProps<{
           <h1 class="hero__title">{{ content.title }}</h1>
           <p class="hero__description">{{ content.description }}</p>
           <HeroActions :actions="content.actions" />
+
+          <ul class="hero__meta">
+            <li v-for="item in content.meta" :key="item.label">
+              <span class="hero__meta-label">{{ item.label }}</span>
+              <span class="hero__meta-value">{{ item.value }}</span>
+            </li>
+          </ul>
         </div>
 
-        <div class="hero__visual-wrap">
-          <img class="hero__visual" :src="content.visual.src" :alt="content.visual.alt" />
-        </div>
+        <HeroSystemVisual :visual="content.visual" />
       </div>
     </BaseContainer>
   </section>
